@@ -1,0 +1,96 @@
+<app-menu></app-menu>
+<main role="main" class="container">
+  <div class="pt-4">
+    <div class="container" style="font-size:small">
+      <div class="row">
+        <div class="col-md-12 order-md-1">
+
+          <div>
+            <div class="card box-shadow border-primary">
+              <div class="card-header text-primary">
+                <h5 class="my-0 font-weight-normal">Listado de Clientes </h5>
+              </div>
+              <div class="card-body">
+
+                  <div class="row pb-md-1">
+                      <div class="col-md-4">
+                <div class="d-flex justify-content-end py-1">
+                  <span><button class="btn btn-sm  btn-outline-primary pt-2 mr-1"
+                      (click)="added()">
+                      <i-info></i-info>Edad Promedio
+                    </button></span>
+                  </div>
+                </div>
+                  <div class="col-md-4">
+                  <div class="d-flex justify-content-end py-2">
+                      <span><button class="btn btn-sm  btn-outline-primary pt-2 mr-1"
+                          (click)="added()">
+                          <i-plus></i-plus>
+                        </button></span>
+                
+                    </div>
+                    </div>
+                </div>
+               
+                <div class="table-responsive-sm">
+                  <table id="tablaToConvert" class="table table-bordered table-hover table-sm">
+                    <thead>
+                     <!-- <tr class="text-center">
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Height</th>
+                        <th scope="col">Mass</th>
+                        <th scope="col">HairColor</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Planet</th>
+                        <th scope="col">Acciones</th>
+                      </tr>-->
+                      <tr class="text-center">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">Edad Muerte</th>
+                       
+                        <th scope="col">Acciones</th>
+                      </tr> 
+                    </thead>
+                    <tbody>
+
+                      <tr  class="text-center" *ngFor="let fichasupervisor of clientecollection.listaCliente">
+                        <td>{{fichasupervisor.clienteId}}</td>
+                        <td>{{fichasupervisor.nombre}}</td>
+                        <td>{{fichasupervisor.apellido}}</td>
+                        <td>{{fichasupervisor.edad}}</td>
+                        <td>{{fichasupervisor.fecha_nacimiento}}</td>
+                        <td>{{fichasupervisor.edad_muerte}}</td>
+                      
+                        
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="updated()"><i-edit></i-edit></button>
+                          <button type="button" class="btn btn-outline-danger btn-sm" (click)="delete(fichasupervisor.clienteId)"><i-delete></i-delete></button>
+                        </td>
+                      </tr> 
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="clientecollection.paginacion.cantidadPaginas*10" size="sm" [(page)]="pages"
+              aria-label="Default pagination" (pageChange)="loadPage($event)"></ngb-pagination>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<app-footer></app-footer>

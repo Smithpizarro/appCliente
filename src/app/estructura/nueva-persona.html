@@ -1,0 +1,63 @@
+<div class="modal-header bg-light">
+        <h5 class="modal-title text-primary" id="modal-basic-title">Agregar Cliente</h5>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div>
+        <div class="modal-body small" data-spy="scroll" data-offset="0" ng-style="display: flex;">
+    
+            
+    
+    
+            <div class="row pb-md-1">
+                <div class="col-md-4">
+                        <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" #nombre id="nombre" class="form-control form-control-sm" placeholder="" >
+                                </div>
+                </div>
+               
+                <div class="col-md-4">
+                        <div class="form-group">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" #apellido id="apellido" class="form-control form-control-sm" placeholder="" >
+                                </div>
+                </div>
+      
+                <div class="col-md-4">
+                        <div class="form-group">
+                                <label for="edad">Edad:</label>
+                                <input type="number" #edad id="height" class="form-control form-control-sm" placeholder="" >
+                                </div>
+                </div>
+            </div>
+            <div class="row pb-md-1">
+                    <div class="col-md-4">
+                            <div class="form-group">
+                                    <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                                    <input type="text" #fechaNacimiento id="fechaNacimiento" class="form-control form-control-sm" placeholder="" >
+                                    </div>
+                    </div>
+        
+                    <div class="col-md-4">
+                            <div class="form-group">
+                                    <label for="edadMuerte">Edad Muerte:</label>
+                                    <input type="number" #edadMuerte id="edadMuerte" class="form-control form-control-sm" placeholder="" >
+                                    </div>
+                    </div>   
+                </div>
+                <div class="row pb-md-1">
+    
+                </div>
+ 
+    
+        </div>
+        <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-primary btn-md mr-2" (click)="agregarPersona(nombre.value,apellido.value,edad.value,fechaNacimiento.value,edadMuerte.value)">
+                        Agregar
+                    </button>
+              </div>
+    
+    
+    </div>
